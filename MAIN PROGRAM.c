@@ -37,7 +37,7 @@ int main()
 				x=5;
 				break;
 			default: 
-				printf("Choice not available\n");
+				printf("******Choice not available******\n");
 				break;	
 		}
 	}
@@ -45,17 +45,17 @@ int main()
 int changeprize(int prize)
 {
 	char pass[10],pak[10]="pass";
-	printf("Enter the password to change price of ticket: ");
+	printf("Enter the password to change the price of the ticket: ");
 	scanf("%s",&pass);
 	if (strcmp(pass,pak)==0)
 	{
-		printf("Please enter new price: ");
+		printf("Please enter the new price: ");
 		scanf("%d",&prize);
 		system("PAUSE");
 		system("CLS");
 	}
 	else 
-		printf("The entered password is wrong! ");
+		printf("******The entered password is wrong!******");
 	return prize;
 }
 void reservation(int *array,int price,int slection)
@@ -71,7 +71,7 @@ void reservation(int *array,int price,int slection)
 			if(i%10==0)
 				printf("\n\n");
 		}
-		printf("Please enter your name: ");
+		printf("Please enter your Name: ");
 		scanf(" %19[^\n]%*[^\n]",&person[count].name);
 		printf("Please enter your phone number: ");
 		scanf("%u",&person[count].phone);
@@ -79,8 +79,8 @@ void reservation(int *array,int price,int slection)
 		scanf("%d",&j);
 		if (j>100||j<1)
 			{
-				printf("seat1 number is unavailable in this theater\n");
-				printf("Please re-enter seat number: ");
+				printf("Seat number is unavailable in this theater\n");
+				printf("Please re-enter the seat number: ");
 				scanf("%d",&j);
 			}
 		if (array[j]==1)
@@ -106,7 +106,7 @@ int choice1(void)
 	printf(" ==================================================================\n");
 	printf("||             1- To edit price of ticket (only admin):           ||\n");
 	printf("||             2- To view reserved tickets (only admin):          ||\n");
-	printf("||             3- To purchase ticket:                              ||\n");
+	printf("||             3- To purchase ticket:                             ||\n");
 	printf("||             4- To cancel the seat:                             ||\n");
 	printf("||             5- Exit system:                                    ||\n");
 	printf("||================================================================||\n");
@@ -117,7 +117,7 @@ int choice1(void)
 void cancel(int *array)
 {
       int Cseat,i,stop;
-	  printf("Please enter ID number of ticket: ");
+	  printf("Please enter ID number of the ticket: ");
 	  scanf("%d",&Cseat);
 	  for (i=0;i<300;i++)
 	  {
@@ -131,7 +131,7 @@ void cancel(int *array)
 	  		}
 	  }
 	  if (stop!=5)	
-	  		printf("Ticket ID number is incorrect please enter right one to cancel ticket: \n");
+	  		printf("Ticket ID number is incorrect please enter the right one to cancel ticket: \n");
 }
 void ticket1(int choice,char name[10],int id2,int price)
 {
@@ -154,17 +154,17 @@ void details(void)
 {
 	int i;
 	char pass[10],pak[10]="pass";
-	printf("Enter the password to see details: ");
+	printf("Enter the password to see the details: ");
 	scanf("%s",&pass);
 	if (strcmp(pass,pak)==0)
 	{
 		for (i=0;i<count;i++)
 		{
-			printf("seat no: %d is booked by %s booking id is %d\n",person[i].seat,person[i].name,person[i].id);
+			printf("Seat no: %d is booked by %s booking id is %d\n",person[i].seat,person[i].name,person[i].id);
 		}
 	}
 	else                                                 
-		printf("Entered password is wrong \n");
+		printf("******Entered password is wrong******\n");
 		system("PAUSE");
 		system("CLS");
 	
